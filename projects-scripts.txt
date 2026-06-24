@@ -1,0 +1,32 @@
+ALB - 10.10.0.0/16
+ELB-PUB-A - 10.10.0.0/24
+ELB-PUB-B - 10.10.1.0/24
+
+ELB-RT : IGW with ELB
+EC2-RT
+
+EC2-PUB-A - 10.10.11.0/24
+EC2-PUB-B - 10.10.12.0/24
+
+#!/bin/bash
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+mkdir /var/www/html/app1
+echo "<h1> Hi there..you reached to right backend ec2 </h1>" > /var/www/html/app1/index.html
+echo "configured successfully"
+
+
+
+#!/bin/bash
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+mkdir /var/www/html/app2
+echo "<h1> welcome to Cloud World..! app2 is working.! </h1>" > /var/www/html/app2/index.html
+echo "configured successfully"
+
+
+[Architecture](https://github.com/nivas-22/Course-Tutorial/edit/master/Aws-Notes/aws-archi.jpeg)
+
+https://clouddevsecops.medium.com/alb-path-based-routing-in-aws-6d2b4ca48526
